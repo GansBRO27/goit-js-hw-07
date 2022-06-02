@@ -3,14 +3,11 @@ import { galleryItems } from "./gallery-items.js";
 const galleryContainer = document.querySelector(".gallery");
 
 galleryItems.forEach((galleryItem) => {
-  const instance = basicLightbox.create(`
-    <img src="https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg" width="800" height="600">
-`);
   galleryContainer.insertAdjacentHTML(
     "beforeend",
     `
     <div class="gallery__item">
-      <a class="gallery__link" href =''>
+      <a class="gallery__link" href="large-image.jpg">
         <img
           class="gallery__image"
           src=${galleryItem.preview}
