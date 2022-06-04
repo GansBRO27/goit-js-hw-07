@@ -27,11 +27,15 @@ galleryContainer.addEventListener("click", (e) => {
     <img src=${e.target.dataset.source} width="800" height="600">
 `);
   instance.show();
+  window.addEventListener("keydown", onModalOpen);
 
-  window.addEventListener("keydown", (e) => {
+  function onModalOpen(e) {
+    console.log(e);
     if (e.code !== "Escape") {
       return;
     }
+
     instance.close();
-  });
+    window.removeEventListener("keydown", onModalOpen);
+  }
 });
